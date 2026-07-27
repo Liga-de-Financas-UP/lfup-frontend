@@ -61,7 +61,7 @@ export default function EventoPage() {
 
           <div className="mt-12 space-y-1.5 text-sm leading-relaxed text-white/60">
             <p className="text-base text-white">
-              Diego Endrigo{" "}
+              Diego Endrigo
               <span className="text-white/50">
                 , fundador e CEO da Utah Invest, escritório credenciado à XP
               </span>

@@ -8,9 +8,9 @@ export const EVENT = {
   dataHora: null as string | null,
   local: {
     nome: "Âmbar",
-    endereco: "Rua José Sikorski, 46 · Santo Inácio, Curitiba/PR",
+    endereco: "R. Cel. Dulcídio, 918 · Batel, Curitiba/PR",
     mapsUrl:
-      "https://www.google.com/maps/search/?api=1&query=%C3%82mbar+Rua+Jos%C3%A9+Sikorski+46+Curitiba",
+      "https://www.google.com/maps/search/?api=1&query=%C3%82mbar+R.+Cel.+Dulc%C3%ADdio+918+Batel+Curitiba",
   },
 } as const;
 
