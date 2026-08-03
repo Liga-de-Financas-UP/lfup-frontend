@@ -1,4 +1,4 @@
-import { BRAND } from "@/shared/config/constants";
+import { SectionHeader } from "./section-header";
 
 const decola = [
   {
@@ -35,45 +35,31 @@ const decola = [
 
 export function CultureSection() {
   return (
-    <section className="border-t border-gray-100">
-      <div className="mx-auto max-w-7xl px-4 py-20 md:px-8 md:py-28">
-        <div className="text-center">
-          <p
-            className="text-[11px] font-semibold uppercase tracking-[0.2em]"
-            style={{ color: BRAND.color.primary }}
-          >
-            Cultura
-          </p>
-          <h2
-            className="mt-3 text-2xl font-bold tracking-tight md:text-3xl"
-            style={{ color: BRAND.color.primary }}
-          >
-            DECOLA
-          </h2>
-          <p className="mx-auto mt-4 max-w-md text-sm text-gray-400">
-            Nosso acróstico cultural que guia tudo o que fazemos na Liga.
-          </p>
-        </div>
-        <div className="mx-auto mt-14 max-w-3xl space-y-3">
+    <section className="border-t border-cream/15">
+      <div className="mx-auto max-w-5xl px-6 py-20 md:py-28">
+        <SectionHeader
+          index="04"
+          eyebrow="Cultura"
+          title="DECOLA"
+          description="Nosso acróstico cultural que guia tudo o que fazemos na Liga."
+        />
+        <div className="mt-14 grid gap-4 md:grid-cols-2">
           {decola.map((item) => (
             <div
               key={item.letter}
-              className="flex gap-5 rounded-xl border border-gray-100 bg-white p-6 transition-all hover:border-gray-200 hover:shadow-sm"
+              className="flex gap-5 rounded-2xl border border-cream/12 bg-ink-soft p-6"
             >
               <span
-                className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full text-lg font-bold text-white"
-                style={{ backgroundColor: BRAND.color.primary }}
+                className="font-display text-5xl leading-none text-sage"
+                style={{ letterSpacing: "-0.02em" }}
               >
                 {item.letter}
               </span>
               <div>
-                <p
-                  className="text-sm font-semibold"
-                  style={{ color: BRAND.color.primary }}
-                >
-                  {item.word}
+                <p className="text-sm font-semibold text-cream">{item.word}</p>
+                <p className="mt-1 text-sm leading-relaxed text-cream/55">
+                  {item.text}
                 </p>
-                <p className="mt-1 text-sm text-gray-400">{item.text}</p>
               </div>
             </div>
           ))}

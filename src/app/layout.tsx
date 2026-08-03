@@ -1,11 +1,21 @@
 import type { Metadata } from "next";
 import Script from "next/script";
-import { Inter } from "next/font/google";
+import { Poppins } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
 
-const inter = Inter({
+// Fonte de corpo/títulos: geométrica arredondada, no espírito da Google Sans do brand book
+const poppins = Poppins({
   variable: "--font-sans",
   subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700"],
+});
+
+// Fonte decorativa da marca (wordmark "lfup." e títulos display)
+const gloucester = localFont({
+  src: "./fonts/gloucester-extra-condensed.ttf",
+  variable: "--font-gloucester",
+  display: "swap",
 });
 
 export const metadata: Metadata = {
@@ -20,7 +30,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-BR">
-      <body className={`${inter.variable} font-sans antialiased`}>
+      <body
+        className={`${poppins.variable} ${gloucester.variable} font-sans antialiased`}
+      >
         <Script id="ms-clarity" strategy="afterInteractive">
           {`(function(c,l,a,r,i,t,y){
               c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};

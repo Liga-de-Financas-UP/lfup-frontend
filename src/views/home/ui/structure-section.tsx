@@ -1,4 +1,4 @@
-import { BRAND } from "@/shared/config/constants";
+import { SectionHeader } from "./section-header";
 
 const roles = [
   {
@@ -23,8 +23,7 @@ const roles = [
   },
   {
     title: "Analista",
-    description:
-      "Produção e suporte técnico. Elabora conteúdos e relatórios.",
+    description: "Produção e suporte técnico. Elabora conteúdos e relatórios.",
   },
   {
     title: "Trainee",
@@ -38,43 +37,23 @@ const roles = [
 
 export function StructureSection() {
   return (
-    <section className="border-t border-gray-100 bg-[#fafafa]">
-      <div className="mx-auto max-w-7xl px-4 py-20 md:px-8 md:py-28">
-        <div className="text-center">
-          <p
-            className="text-[11px] font-semibold uppercase tracking-[0.2em]"
-            style={{ color: BRAND.color.primary }}
-          >
-            Organização
-          </p>
-          <h2
-            className="mt-3 text-2xl font-bold tracking-tight md:text-3xl"
-            style={{ color: BRAND.color.primary }}
-          >
-            Estrutura da Liga
-          </h2>
-        </div>
-        <div className="mx-auto mt-14 max-w-2xl space-y-3">
-          {roles.map((role, i) => (
+    <section className="border-t border-cream/15">
+      <div className="mx-auto max-w-5xl px-6 py-20 md:py-28">
+        <SectionHeader
+          index="07"
+          eyebrow="Organização"
+          title="Estrutura da Liga"
+        />
+        <div className="mt-14 divide-y divide-cream/12 border-y border-cream/12">
+          {roles.map((role) => (
             <div
               key={role.title}
-              className="flex items-start gap-4 rounded-xl border border-gray-100 bg-white px-6 py-5 transition-all hover:border-gray-200 hover:shadow-sm"
+              className="grid gap-2 py-5 md:grid-cols-[220px_1fr] md:gap-8"
             >
-              <div
-                className="mt-0.5 h-2 w-2 flex-shrink-0 rounded-full"
-                style={{ backgroundColor: BRAND.color.primary }}
-              />
-              <div>
-                <p
-                  className="text-sm font-semibold"
-                  style={{ color: BRAND.color.primary }}
-                >
-                  {role.title}
-                </p>
-                <p className="mt-0.5 text-sm text-gray-400">
-                  {role.description}
-                </p>
-              </div>
+              <p className="text-base font-semibold text-cream">{role.title}</p>
+              <p className="text-sm leading-relaxed text-cream/55">
+                {role.description}
+              </p>
             </div>
           ))}
         </div>

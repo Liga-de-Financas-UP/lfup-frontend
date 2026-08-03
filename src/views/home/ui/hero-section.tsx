@@ -1,45 +1,57 @@
 import Link from "next/link";
-import { SafeImage } from "@/shared/ui/safe-image";
-import { images } from "@/shared/config/images";
-import { BRAND } from "@/shared/config/constants";
+
+const META = [
+  { k: "6 anos", v: "de atuação" },
+  { k: "50+", v: "membros ativos" },
+  { k: "8", v: "diretorias" },
+];
 
 export function HeroSection() {
   return (
-    <section className="mx-auto flex max-w-7xl flex-col items-center px-4 py-24 text-center md:px-8 md:py-32">
-      <SafeImage
-        src={images.logo}
-        alt={BRAND.name}
-        width={72}
-        height={72}
-        className="mb-8 h-[72px] w-auto"
-        unoptimized
-      />
-      <h1
-        className="text-4xl font-bold leading-tight tracking-tight md:text-6xl"
-        style={{ color: BRAND.color.primary }}
-      >
-        Liga de Finanças
-        <br />
-        <span className="font-light">da Universidade Positivo</span>
-      </h1>
-      <p className="mt-6 max-w-lg text-base leading-relaxed text-gray-400 md:text-lg">
-        A LFUP é uma associação formada por alunos da Universidade Positivo, dedicada a analisar o mercado financeiro, estimular a educação financeira e agregar experiências para o crescimento pessoal e profissional. Nosso lema: &ldquo;conhecer pessoas certas na hora certa.&rdquo;
-      </p>
-      <div className="mt-10 flex flex-col gap-3 sm:flex-row sm:gap-4">
-        <Link
-          href="/processo-seletivo"
-          className="rounded-full px-8 py-3 text-sm font-medium text-white transition-opacity hover:opacity-90"
-          style={{ backgroundColor: BRAND.color.primary }}
-        >
-          Processo Seletivo
-        </Link>
-        <a
-          href="#areas"
-          className="rounded-full border px-8 py-3 text-sm font-medium transition-colors hover:bg-gray-50"
-          style={{ color: BRAND.color.primary, borderColor: BRAND.color.primary }}
-        >
-          Conheça as áreas
-        </a>
+    <section className="brand-mesh relative overflow-hidden border-b border-cream/15">
+      <div className="mx-auto max-w-5xl px-6 py-24 md:py-32">
+        <p className="text-[11px] uppercase tracking-[0.3em] text-cream/50">
+          Por alunos, para alunos
+        </p>
+
+        <h1 className="mt-6 max-w-3xl text-4xl font-semibold leading-[1.05] tracking-tight text-cream md:text-6xl">
+          Liga de Finanças{" "}
+          <span className="font-light text-cream/70">
+            da Universidade Positivo
+          </span>
+        </h1>
+
+        <p className="mt-6 max-w-xl leading-relaxed text-cream/60">
+          Associação formada por alunos da Universidade Positivo, dedicada a
+          analisar o mercado financeiro, estimular a educação financeira e
+          conectar as pessoas certas na hora certa.
+        </p>
+
+        <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:items-center sm:gap-6">
+          <Link
+            href="/processo-seletivo"
+            className="inline-flex items-center justify-center bg-cream px-7 py-3.5 text-xs font-semibold uppercase tracking-widest text-ink transition hover:bg-cream/80"
+          >
+            Processo seletivo
+          </Link>
+          <a
+            href="#areas"
+            className="text-xs uppercase tracking-widest text-cream/60 underline underline-offset-8 transition hover:text-cream"
+          >
+            Conheça as áreas
+          </a>
+        </div>
+
+        <dl className="mt-16 flex flex-wrap gap-x-10 gap-y-4 border-t border-cream/15 pt-8">
+          {META.map((m) => (
+            <div key={m.k} className="flex items-baseline gap-2">
+              <dt className="text-xl font-semibold text-cream">{m.k}</dt>
+              <dd className="text-xs uppercase tracking-wider text-cream/45">
+                {m.v}
+              </dd>
+            </div>
+          ))}
+        </dl>
       </div>
     </section>
   );

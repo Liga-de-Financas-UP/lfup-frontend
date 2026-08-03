@@ -1,4 +1,5 @@
 import { PageContainer } from "@/widgets/page-container";
+import { NewsletterSection } from "@/views/home/ui/newsletter-section";
 import { HeroSection } from "@/views/home/ui/hero-section";
 import { AboutSection } from "@/views/home/ui/about-section";
 import { LeadershipSection } from "@/views/home/ui/leadership-section";
@@ -12,12 +13,13 @@ import { CtaSection } from "@/views/home/ui/cta-section";
 export default function Home() {
   return (
     <PageContainer>
+      <NewsletterSection />
       <HeroSection />
       <AboutSection />
-      <LeadershipSection />
       <AreasSection />
-      <ValuesSection />
+      <LeadershipSection />
       <CultureSection />
+      <ValuesSection />
       <TimelineSection />
       <StructureSection />
       <CtaSection />

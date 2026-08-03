@@ -145,3 +145,250 @@ export async function gradeAttempt(
     body: JSON.stringify(payload),
   });
 }
+
+// ─── Membros ──────────────────────────────────────────────────────────────
+
+export type MemberRole =
+  | "presidente"
+  | "diretor"
+  | "analista"
+  | "trainee"
+  | "candidato"
+  | "admin";
+
+export interface AdminMemberRow {
+  id: string;
+  email: string;
+  name: string;
+  avatarUrl: string | null;
+  role: MemberRole;
+  isActive: boolean;
+  phone: string | null;
+  course: string | null;
+  semester: number | null;
+  departmentId: string | null;
+  departmentName: string | null;
+}
+
+export interface AdminDepartment {
+  id: string;
+  name: string;
+}
+
+export interface CreateMemberInput {
+  name: string;
+  email: string;
+  role: MemberRole;
+  departmentId?: string | null;
+  course?: string;
+  phone?: string;
+}
+
+export async function getAdminDepartments() {
+  // /departments/public é aberto e serve como lista de áreas para os selects.
+  let res: Response;
+  try {
+    res = await fetch(`${API_URL}/departments/public`);
+  } catch {
+    return { success: false as const, error: "Sem conexão com o servidor." };
+  }
+  try {
+    return (await res.json()) as ApiEnvelope<AdminDepartment[]>;
+  } catch {
+    return { success: false as const, error: `HTTP ${res.status}` };
+  }
+}
+
+export async function getAdminMembers(params?: {
+  search?: string;
+  departmentId?: string;
+  role?: string;
+}) {
+  const qs = new URLSearchParams({ limit: "200" });
+  if (params?.search) qs.set("search", params.search);
+  if (params?.departmentId) qs.set("departmentId", params.departmentId);
+  if (params?.role) qs.set("role", params.role);
+  return authedFetch<AdminMemberRow[]>(`/members?${qs.toString()}`);
+}
+
+export async function createMember(input: CreateMemberInput) {
+  return authedFetch<AdminMemberRow>(`/members`, {
+    method: "POST",
+    body: JSON.stringify(input),
+  });
+}
+
+export async function updateMemberRole(id: string, role: MemberRole) {
+  return authedFetch(`/members/${id}/role`, {
+    method: "PATCH",
+    body: JSON.stringify({ role }),
+  });
+}
+
+export async function updateMemberProfile(
+  id: string,
+  data: { departmentId?: string | null; course?: string; phone?: string },
+) {
+  return authedFetch(`/members/${id}/profile`, {
+    method: "PUT",
+    body: JSON.stringify(data),
+  });
+}
+
+export async function deactivateMember(id: string) {
+  return authedFetch(`/members/${id}/deactivate`, { method: "PATCH" });
+}
+
+export async function activateMember(id: string) {
+  return authedFetch(`/members/${id}/activate`, { method: "PATCH" });
+}
+
+export async function deleteMember(id: string) {
+  return authedFetch(`/members/${id}`, { method: "DELETE" });
+}
+
+// ─── Eventos & Presença ─────────────────────────────────────────────────────
+
+export type EventType =
+  | "assembleia"
+  | "palestra"
+  | "workshop"
+  | "reuniao"
+  | "outro";
+
+export type AttendanceStatus = "present" | "absent" | "justified";
+
+export interface AdminEventRow {
+  id: string;
+  title: string;
+  type: EventType;
+  description: string | null;
+  location: string | null;
+  startsAt: string;
+  endsAt: string | null;
+  createdAt: string;
+  presentCount: number;
+  attendanceCount: number;
+}
+
+export interface RosterRow {
+  userId: string;
+  name: string;
+  email: string;
+  avatarUrl: string | null;
+  role: MemberRole;
+  departmentId: string | null;
+  departmentName: string | null;
+  status: AttendanceStatus | null;
+  notedAt: string | null;
+}
+
+export interface CreateEventInput {
+  title: string;
+  type: EventType;
+  startsAt: string;
+  endsAt?: string | null;
+  location?: string | null;
+  description?: string | null;
+}
+
+export async function getEvents() {
+  return authedFetch<AdminEventRow[]>(`/events`);
+}
+
+export async function createEvent(input: CreateEventInput) {
+  return authedFetch<AdminEventRow>(`/events`, {
+    method: "POST",
+    body: JSON.stringify(input),
+  });
+}
+
+export async function updateEvent(id: string, input: Partial<CreateEventInput>) {
+  return authedFetch<AdminEventRow>(`/events/${id}`, {
+    method: "PUT",
+    body: JSON.stringify(input),
+  });
+}
+
+export async function deleteEvent(id: string) {
+  return authedFetch(`/events/${id}`, { method: "DELETE" });
+}
+
+export async function getEventRoster(id: string) {
+  return authedFetch<{ event: AdminEventRow; roster: RosterRow[] }>(
+    `/events/${id}/roster`,
+  );
+}
+
+export async function setAttendance(
+  eventId: string,
+  userId: string,
+  status: AttendanceStatus,
+) {
+  return authedFetch(`/events/${eventId}/attendance`, {
+    method: "POST",
+    body: JSON.stringify({ userId, status }),
+  });
+}
+
+export async function clearAttendance(eventId: string, userId: string) {
+  return authedFetch(`/events/${eventId}/attendance/${userId}`, {
+    method: "DELETE",
+  });
+}
+
+// ─── Processo Seletivo (inscrições) ─────────────────────────────────────────
+
+export type ApplicationStatus =
+  | "pending"
+  | "reviewing"
+  | "approved"
+  | "rejected";
+
+export interface AdminProcess {
+  id: string;
+  name: string;
+  description: string | null;
+  semester: string;
+  isActive: boolean;
+  startsAt: string | null;
+  endsAt: string | null;
+  applicationCount: string;
+}
+
+export interface AdminApplication {
+  id: string;
+  status: ApplicationStatus;
+  fullName: string | null;
+  email: string | null;
+  phone: string | null;
+  course: string | null;
+  semester: number | null;
+  instagram: string | null;
+  linkedinUrl: string | null;
+  motivation: string | null;
+  createdAt: string;
+  updatedAt: string;
+  departmentPreference: string | null;
+}
+
+export async function getAdminProcesses() {
+  return authedFetch<AdminProcess[]>(`/processes`);
+}
+
+export async function getProcessApplications(processId: string) {
+  return authedFetch<AdminApplication[]>(
+    `/processes/${processId}/applications`,
+  );
+}
+
+export async function updateApplicationStatus(
+  processId: string,
+  applicationId: string,
+  status: ApplicationStatus,
+) {
+  return authedFetch(
+    `/processes/${processId}/applications/${applicationId}/status`,
+    { method: "PATCH", body: JSON.stringify({ status }) },
+  );
+}

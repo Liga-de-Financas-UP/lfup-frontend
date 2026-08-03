@@ -1,37 +1,26 @@
 import Link from "next/link";
-import { SafeImage } from "@/shared/ui/safe-image";
-import { images } from "@/shared/config/images";
+import { Wordmark } from "@/shared/ui/wordmark";
 import { BRAND, NAV_LINKS, SOCIAL_LINKS } from "@/shared/config/constants";
 
 export function Footer() {
   return (
-    <footer className="border-t border-gray-100 bg-white">
-      <div className="mx-auto max-w-7xl px-4 py-16 md:px-8">
+    <footer className="border-t border-cream/15">
+      <div className="mx-auto max-w-5xl px-6 py-16">
         <div className="grid gap-12 md:grid-cols-3">
           {/* Brand */}
           <div className="flex flex-col gap-4">
-            <SafeImage
-              src={images.logoBull}
-              alt={BRAND.name}
-              width={40}
-              height={40}
-              className="h-10 w-10 object-contain opacity-70"
-              unoptimized
-            />
-            <p className="max-w-xs text-sm leading-relaxed text-gray-400">
+            <Wordmark className="text-4xl text-cream" />
+            <p className="max-w-xs text-sm leading-relaxed text-cream/50">
               {BRAND.fullName}
             </p>
-            <p className="text-xs text-gray-300">
-              Feito por alunos, para todos!
+            <p className="text-xs uppercase tracking-[0.2em] text-cream/35">
+              De alunos, para alunos.
             </p>
           </div>
 
           {/* Links */}
           <div>
-            <p
-              className="mb-4 text-xs font-semibold uppercase tracking-widest"
-              style={{ color: BRAND.color.primary }}
-            >
+            <p className="mb-5 text-xs font-semibold uppercase tracking-[0.25em] text-cream/40">
               Links
             </p>
             <nav className="flex flex-col gap-3">
@@ -39,7 +28,7 @@ export function Footer() {
                 <Link
                   key={link.href}
                   href={link.href}
-                  className="text-sm text-gray-500 transition-colors hover:text-gray-900"
+                  className="text-sm text-cream/60 transition-colors hover:text-cream"
                 >
                   {link.label}
                 </Link>
@@ -49,10 +38,7 @@ export function Footer() {
 
           {/* Social */}
           <div>
-            <p
-              className="mb-4 text-xs font-semibold uppercase tracking-widest"
-              style={{ color: BRAND.color.primary }}
-            >
+            <p className="mb-5 text-xs font-semibold uppercase tracking-[0.25em] text-cream/40">
               Social
             </p>
             <div className="flex flex-col gap-3">
@@ -60,7 +46,7 @@ export function Footer() {
                 href={SOCIAL_LINKS.instagram}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-sm text-gray-500 transition-colors hover:text-gray-900"
+                className="text-sm text-cream/60 transition-colors hover:text-cream"
               >
                 Instagram
               </a>
@@ -68,7 +54,7 @@ export function Footer() {
                 href={SOCIAL_LINKS.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-sm text-gray-500 transition-colors hover:text-gray-900"
+                className="text-sm text-cream/60 transition-colors hover:text-cream"
               >
                 LinkedIn
               </a>
@@ -77,8 +63,8 @@ export function Footer() {
         </div>
 
         {/* Bottom */}
-        <div className="mt-12 border-t border-gray-100 pt-8">
-          <p className="text-center text-xs text-gray-300">
+        <div className="mt-16 border-t border-cream/15 pt-8">
+          <p className="text-xs text-cream/30">
             &copy; {new Date().getFullYear()} {BRAND.name}. Todos os direitos
             reservados.
           </p>

@@ -97,8 +97,8 @@ export function AdminAttemptDetailView({ attemptId }: Props) {
 
   if (state === "loading") {
     return (
-      <div className="flex min-h-screen items-center justify-center bg-[#fafafa]">
-        <p className="text-sm text-gray-400">Carregando...</p>
+      <div className="flex min-h-[60vh] items-center justify-center">
+        <p className="text-sm text-neutral-400">Carregando…</p>
       </div>
     );
   }
@@ -125,30 +125,23 @@ export function AdminAttemptDetailView({ attemptId }: Props) {
   const answered = questions.filter((q) => q.answer.trim().length > 0).length;
 
   return (
-    <div className="min-h-screen bg-[#fafafa]">
-      <header className="border-b border-gray-100 bg-white">
-        <div className="mx-auto flex max-w-5xl items-center justify-between px-4 py-4 md:px-8">
-          <div>
-            <Link
-              href="/admin/provas"
-              className="text-xs text-gray-500 underline"
-            >
-              ← Tentativas
-            </Link>
-            <h1
-              className="mt-1 text-lg font-bold tracking-tight"
-              style={{ color: BRAND.color.primary }}
-            >
-              {candidate.fullName ?? candidate.email}
-            </h1>
-            <p className="text-xs text-gray-500">
-              {candidate.email} · RGM {candidate.rgm}
-            </p>
-          </div>
-        </div>
-      </header>
+    <div className="mx-auto max-w-5xl px-6 py-8 md:px-10">
+      <Link
+        href="/admin/provas"
+        className="inline-flex items-center gap-1.5 text-xs text-neutral-500 transition-colors hover:text-neutral-900"
+      >
+        ← Tentativas
+      </Link>
+      <div className="mt-3 border-b border-neutral-200 pb-5">
+        <h1 className="text-2xl font-bold tracking-tight text-neutral-900">
+          {candidate.fullName ?? candidate.email}
+        </h1>
+        <p className="mt-1 text-sm text-neutral-500">
+          {candidate.email} · RGM {candidate.rgm}
+        </p>
+      </div>
 
-      <main className="mx-auto max-w-5xl space-y-6 px-4 py-8 md:px-8">
+      <main className="mt-6 space-y-6">
         {/* Summary */}
         <section className="grid grid-cols-2 gap-3 md:grid-cols-5">
           <MetaCard label="Status" value={attempt.status} />

@@ -1,30 +1,32 @@
 import Link from "next/link";
-import { BRAND } from "@/shared/config/constants";
 
 export function CtaSection() {
   return (
-    <section className="border-t border-gray-100">
-      <div className="mx-auto max-w-7xl px-4 py-20 text-center md:px-8 md:py-28">
-        <h2
-          className="text-2xl font-bold tracking-tight md:text-3xl"
-          style={{ color: BRAND.color.primary }}
-        >
-          Faça parte da LFUP
+    <section className="brand-mesh border-t border-cream/15">
+      <div className="mx-auto max-w-5xl px-6 py-24 text-center md:py-32">
+        <h2 className="mx-auto max-w-2xl text-3xl font-bold leading-tight text-cream md:text-5xl">
+          Faça parte da LFUP.
         </h2>
-        <p className="mx-auto mt-4 max-w-lg text-sm text-gray-400">
-          A LFUP está aberta a todos os alunos com vínculo com a Universidade
-          Positivo. Ao entrar, você inicia como Trainee, participando de
-          treinamentos e recebendo orientação dos analistas e diretores, com a
-          possibilidade de crescer até cargos de liderança. Inscreva-se no nosso
-          processo seletivo.
+        <p className="mx-auto mt-6 max-w-lg leading-relaxed text-cream/60">
+          Aberta a todos os alunos com vínculo com a Universidade Positivo. Você
+          entra como Trainee, participa de treinamentos e recebe orientação de
+          analistas e diretores — com a possibilidade de crescer até cargos de
+          liderança.
         </p>
-        <Link
-          href="/processo-seletivo"
-          className="mt-8 inline-block rounded-full px-10 py-3 text-sm font-medium text-white transition-opacity hover:opacity-90"
-          style={{ backgroundColor: BRAND.color.primary }}
-        >
-          Inscreva-se agora
-        </Link>
+        <div className="mt-12 flex flex-col items-center gap-4 sm:flex-row sm:justify-center sm:gap-8">
+          <Link
+            href="/processo-seletivo"
+            className="inline-flex items-center justify-center bg-cream px-8 py-4 text-sm font-semibold uppercase tracking-widest text-ink transition hover:bg-cream/80"
+          >
+            Inscreva-se agora
+          </Link>
+          <a
+            href="#areas"
+            className="text-sm uppercase tracking-widest text-cream/60 underline underline-offset-8 transition hover:text-cream"
+          >
+            Conheça as áreas
+          </a>
+        </div>
       </div>
     </section>
   );
