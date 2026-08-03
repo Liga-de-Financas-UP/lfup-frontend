@@ -27,8 +27,8 @@ const leaders = [
           Not Journal
         </a>
         . No currículo, passagens pelo Corinthians e pela Rappi e um ano vivendo
-        em Londres. Mentor de startups no SebraePR, integrou o Instituto Fundação
-        de Líderes de Curitiba.
+        em Londres. Mentor de startups no SebraePR, integrou o Instituto
+        Formação de Líderes (IFL) de Curitiba.
       </>
     ),
   },

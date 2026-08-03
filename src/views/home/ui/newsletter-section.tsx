@@ -65,8 +65,7 @@ export function NewsletterSection() {
     <section className="brand-mesh-soft border-b border-cream/15 bg-ink">
       <div className="mx-auto grid max-w-5xl gap-8 px-6 py-10 md:grid-cols-[1fr_auto] md:items-center md:py-8">
         <div>
-          <p className="flex items-center gap-2 text-xs uppercase tracking-[0.3em] text-cream/50">
-            <span className="inline-block h-1.5 w-1.5 rounded-full bg-sage" />
+          <p className="text-xs uppercase tracking-[0.3em] text-cream/50">
             Newsletter semanal
           </p>
           <p className="mt-2 max-w-md text-sm leading-relaxed text-cream/70">

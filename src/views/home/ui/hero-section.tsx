@@ -3,7 +3,6 @@ import Link from "next/link";
 const META = [
   { k: "6 anos", v: "de atuação" },
   { k: "50+", v: "membros ativos" },
-  { k: "8", v: "diretorias" },
 ];
 
 export function HeroSection() {

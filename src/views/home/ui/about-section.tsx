@@ -2,7 +2,6 @@ import { SectionHeader } from "./section-header";
 
 const stats = [
   { number: "50+", label: "Membros ativos" },
-  { number: "8", label: "Diretorias" },
   { number: "6 anos", label: "De atuação" },
   { number: "100+", label: "Candidatos por PS" },
 ];
@@ -36,11 +35,11 @@ export function AboutSection() {
               </p>
             </div>
           </div>
-          <div className="grid grid-cols-2 gap-px overflow-hidden rounded-2xl border border-cream/12 bg-cream/12">
+          <div className="grid grid-cols-1 gap-px overflow-hidden rounded-2xl border border-cream/12 bg-cream/12 sm:grid-cols-3">
             {stats.map((stat) => (
               <div
                 key={stat.label}
-                className="bg-ink-soft p-8 text-center"
+                className="bg-ink-soft p-6 text-center"
               >
                 <p className="text-4xl font-bold text-cream">{stat.number}</p>
                 <p className="mt-2 text-xs uppercase tracking-[0.15em] text-cream/50">

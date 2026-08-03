@@ -13,8 +13,8 @@ import { CtaSection } from "@/views/home/ui/cta-section";
 export default function Home() {
   return (
     <PageContainer>
-      <NewsletterSection />
       <HeroSection />
+      <NewsletterSection />
       <AboutSection />
       <AreasSection />
       <LeadershipSection />
