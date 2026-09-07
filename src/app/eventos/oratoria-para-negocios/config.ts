@@ -4,13 +4,13 @@ export const EVENT = {
   titulo: "Oratória para Negócios",
   palestrante: "Diego Endrigo",
   cargoPalestrante: "Fundador & CEO da Utah Invest, escritório credenciado à XP",
-  // Sem data definida ainda — quando tiver, preencha (ex.: "12 de agosto, 19h30")
-  dataHora: null as string | null,
+  // Ex.: "10 de outubro, 19h30" — preencha o horário quando confirmado
+  dataHora: "10 de outubro" as string | null,
   local: {
-    nome: "Âmbar",
-    endereco: "R. Cel. Dulcídio, 918 · Batel, Curitiba/PR",
+    nome: "Escritório Utah Investimentos",
+    endereco: "Curitiba/PR · endereço completo em breve",
     mapsUrl:
-      "https://www.google.com/maps/search/?api=1&query=%C3%82mbar+R.+Cel.+Dulc%C3%ADdio+918+Batel+Curitiba",
+      "https://www.google.com/maps/search/?api=1&query=Utah+Investimentos+Curitiba",
   },
 } as const;
 
