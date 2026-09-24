@@ -103,8 +103,7 @@ export default function IsaFontiPage() {
                 espaços em indústrias dominadas por homens.
               </p>
               <p className="text-[11px] uppercase tracking-[0.2em] text-black/45">
-                {EVENT.local.nome} · {EVENT.semana} ·{" "}
-                {EVENT.dataHora ?? "horário em breve"}
+                {EVENT.local.nome} · {EVENT.dataHora ?? "horário em breve"}
               </p>
             </div>
 
@@ -290,11 +289,10 @@ export default function IsaFontiPage() {
               Data
             </p>
             <p className="mt-4 font-semibold">
-              Semana Acadêmica · {EVENT.semana}
+              {EVENT.dataHora ?? "Data a confirmar"}
             </p>
             <p className="mt-1 text-sm leading-relaxed text-black/60">
-              {EVENT.dataHora ??
-                "O dia e o horário do talk serão confirmados em breve."}
+              Talk dentro da {EVENT.semana} da Universidade Positivo.
             </p>
           </div>
           <div className="border-t border-black/10 py-4 md:border-none md:py-0">

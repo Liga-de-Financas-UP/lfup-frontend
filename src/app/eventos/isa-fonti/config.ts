@@ -5,15 +5,15 @@ export const EVENT = {
   convidada: "Isabelli Fontineli",
   cargoConvidada:
     "Influenciadora e ex-jogadora profissional de Free Fire (B4 e Flamengo Esports)",
-  // Talk dentro da Semana Acadêmica. Preencha o dia/horário exato quando confirmado
-  // (ex.: "23 de setembro, 19h30")
-  dataHora: null as string | null,
-  semana: "22 a 24 de setembro",
+  // Talk dentro da Semana Acadêmica.
+  dataHora: "1º de outubro, 18h" as string | null,
+  semana: "Semana Acadêmica",
   local: {
-    nome: "Universidade Positivo",
-    endereco: "R. Prof. Pedro Viriato Parigot de Souza, 5300 · Curitiba/PR",
+    nome: "Universidade Positivo · Campus Ecoville",
+    endereco:
+      "Auditório do Bloco Vermelho · R. Prof. Pedro Viriato Parigot de Souza, 5300 · Curitiba/PR",
     mapsUrl:
-      "https://www.google.com/maps/search/?api=1&query=Universidade+Positivo+Curitiba",
+      "https://www.google.com/maps/search/?api=1&query=Universidade+Positivo+Campus+Ecoville+Bloco+Vermelho+Curitiba",
   },
 } as const;
 
