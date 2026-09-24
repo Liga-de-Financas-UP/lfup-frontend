@@ -26,11 +26,11 @@ const STATS = [
 export const metadata: Metadata = {
   title: "Dona do Jogo, com Isabelli Fontineli | LFUP",
   description:
-    "Dona do Jogo: talk com Isabelli Fontineli, uma das maiores vozes do Free Fire no Brasil, sobre como ocupar espaços em indústrias dominadas por homens. Evento aberto, voltado ao público feminino, com inscrição. Semana Acadêmica da UP, realização LFUP.",
+    "Dona do Jogo: talk com Isabelli Fontineli, uma das maiores vozes do Free Fire no Brasil, sobre como ocupar espaços em indústrias dominadas por homens. Evento aberto, voltado ao público feminino, com inscrição. Realização LFUP.",
   openGraph: {
     title: "Dona do Jogo, um talk com Isabelli Fontineli",
     description:
-      "Talk com Isabelli Fontineli, ex-jogadora profissional de Free Fire com passagens por B4 e Flamengo Esports, na Semana Acadêmica da Universidade Positivo. Evento aberto, voltado ao público feminino, com inscrição.",
+      "Talk com Isabelli Fontineli, ex-jogadora profissional de Free Fire com passagens por B4 e Flamengo Esports, na Universidade Positivo. Evento aberto, voltado ao público feminino, com inscrição.",
   },
 };
 
@@ -47,7 +47,7 @@ export default function IsaFontiPage() {
             lfup.
           </span>
           <span className="text-[11px] uppercase tracking-[0.3em] text-[#9E1B32]">
-            Semana Acadêmica
+            Talk · 01 out
           </span>
         </div>
       </header>
@@ -184,9 +184,8 @@ export default function IsaFontiPage() {
                 </p>
                 <p>
                   Pausou tudo pela maternidade. Voltou. Seguiu ocupando espaço.
-                  É essa história que ela traz para o palco da Semana
-                  Acadêmica: o que fica para qualquer mulher mirando uma
-                  indústria que ainda não a espera.
+                  É essa história que ela traz para o palco: o que fica para
+                  qualquer mulher mirando uma indústria que ainda não a espera.
                 </p>
               </div>
               <p className="mt-8 text-xs font-semibold uppercase tracking-[0.25em] text-black/40">
@@ -292,7 +291,7 @@ export default function IsaFontiPage() {
               {EVENT.dataHora ?? "Data a confirmar"}
             </p>
             <p className="mt-1 text-sm leading-relaxed text-black/60">
-              Talk dentro da {EVENT.semana} da Universidade Positivo.
+              Quinta-feira, no auditório do Bloco Vermelho.
             </p>
           </div>
           <div className="border-t border-black/10 py-4 md:border-none md:py-0">
@@ -314,7 +313,7 @@ export default function IsaFontiPage() {
       <footer className="border-t border-black/10">
         <div className="mx-auto flex max-w-5xl flex-col items-center justify-between gap-4 px-6 py-8 text-xs text-black/40 md:flex-row">
           <p>Realização: Liga de Finanças da Universidade Positivo</p>
-          <p>Semana Acadêmica · Universidade Positivo</p>
+          <p>Dona do Jogo · 1º de outubro, 18h</p>
         </div>
       </footer>
     </div>

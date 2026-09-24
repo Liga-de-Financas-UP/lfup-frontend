@@ -5,9 +5,7 @@ export const EVENT = {
   convidada: "Isabelli Fontineli",
   cargoConvidada:
     "Influenciadora e ex-jogadora profissional de Free Fire (B4 e Flamengo Esports)",
-  // Talk dentro da Semana Acadêmica.
   dataHora: "1º de outubro, 18h" as string | null,
-  semana: "Semana Acadêmica",
   local: {
     nome: "Universidade Positivo · Campus Ecoville",
     endereco:

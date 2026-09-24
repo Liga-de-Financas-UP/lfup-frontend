@@ -36,9 +36,9 @@ export const EVENTOS: EventoAgenda[] = [
   {
     dia: "01",
     mes: "out",
-    dataExtenso: "quarta-feira, 1º de outubro, 18h",
-    titulo: "Semana Acadêmica",
-    subtitulo: "Dona do Jogo: talk com Isabelli Fontineli",
+    dataExtenso: "quinta-feira, 1º de outubro, 18h",
+    titulo: "Dona do Jogo",
+    subtitulo: "Talk com Isabelli Fontineli",
     descricao:
       "Talk aberto, voltado ao público feminino, sobre como ocupar espaços em indústrias dominadas por homens. Isabelli Fontineli virou uma das maiores vozes do Free Fire no Brasil, com passagens por B4 e Flamengo Esports e mais de 2 milhões de seguidores nas redes.",
     local: "Bloco Vermelho, UP Campus Ecoville · Curitiba/PR",
