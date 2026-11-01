@@ -14,11 +14,11 @@ const LFUP_WORDMARK_FONT = gloucester.style.fontFamily;
 export const metadata: Metadata = {
   title: "Oratória para Negócios com Diego Endrigo | LFUP",
   description:
-    "Palestra presencial no escritório da Utah Investimentos, em Curitiba: oratória voltada a negócios com Diego Endrigo, fundador e CEO da Utah Invest (XP). Realização Liga de Finanças da Universidade Positivo.",
+    "Palestra presencial na Torre Premium, em Curitiba: oratória voltada a negócios com Diego Endrigo, sócio e CEO da Utah Investimentos. Realização Liga de Finanças da Universidade Positivo.",
   openGraph: {
     title: "Oratória para Negócios com Diego Endrigo (Utah Invest | XP)",
     description:
-      "Evento presencial da LFUP no escritório da Utah Investimentos, em Curitiba, dia 10 de outubro. Vagas garantidas para membros; lista de espera aberta.",
+      "Evento presencial da LFUP na Torre Premium, em Curitiba, dia 7 de novembro, às 10h. Vagas garantidas para membros; lista de espera aberta.",
   },
 };
 
@@ -64,7 +64,7 @@ export default function EventoPage() {
             <p className="text-base text-white">
               Diego Endrigo
               <span className="text-white/50">
-                , fundador e CEO da Utah Invest, escritório credenciado à XP
+                , sócio e CEO da Utah Investimentos
               </span>
             </p>
             <p>
